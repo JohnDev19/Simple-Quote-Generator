@@ -2,7 +2,7 @@
 
 ### Overview
 
-This is a simple web application that generates random stoic quotes. The application is built using HTML, CSS, and JavaScript. The design includes a responsive layout with a distinctive yellow background, a centered content container, and a card element for displaying generated quotes.
+This is a simple web application that generates random stoic quotes. The application is built using HTML, CSS, and JavaScript. The design includes a layout with a yellow background, a centered content container, and a card element for displaying generated quotes.
 
 ### Instructions
 

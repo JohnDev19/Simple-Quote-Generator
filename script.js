@@ -16,3 +16,5 @@ function displayQuote() {
 }
 
 window.onload = displayQuote;
+
+// Copyright (c) 2023 JOHN RÉ PORAS

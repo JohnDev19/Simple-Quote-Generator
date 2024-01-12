@@ -25,16 +25,16 @@ h2 {
     width: 150px;
     font-size: 18px;
     color: #ffffff;
-    background-color: #FFAA00; /* Yellow color */
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Simple shadow effect */
+    background-color: #FFAA00;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
     border: none;
     border-radius: 5px;
     outline: none;
-    transition: box-shadow 0.3s ease; /* Add a smooth transition */
+    transition: box-shadow 0.3s ease;
 }
 
 .btn:hover {
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Adjusted shadow on hover */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 

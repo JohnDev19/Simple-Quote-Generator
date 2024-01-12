@@ -32,7 +32,7 @@ This is a simple web application that generates random stoic quotes. The applica
 - **index.html:** The main HTML file containing the structure of the webpage.
 - **style.css:** The CSS file with styles for the webpage.
 - **script.js:** The JavaScript file handling the generation of random quotes.
-- **icons/favicon.png:** The favicon image for the webpage.
+- **gen.png:** The favicon image for the webpage.
 
 ### Dependencies
 

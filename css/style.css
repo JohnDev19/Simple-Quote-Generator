@@ -86,13 +86,20 @@ h2 {
     margin-top: 20px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     transition: box-shadow 0.3s ease;
+    margin: auto;
+}
+
+@media (min-width: 768px) {
+    .card1 {
+        flex-direction: row;
+    }
 }
 
 .card1, p {
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
+    text-align: center;
 }
-
 button:focus {
     outline: none;
 }

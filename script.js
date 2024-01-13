@@ -79,4 +79,44 @@ function renderError(container) {
     container.innerHTML = '<div class="card"><p style="text-align: center;">Error fetching poetry. Please try again later.</p></div>';
 }
 
+// Dictionary
+
+function getDefinition() {
+    const wordInput = document.getElementById('wordInput');
+    const definitionResult = document.getElementById('definitionResult');
+
+    const word = encodeURIComponent(wordInput.value);
+
+    fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
+        .then(response => response.json())
+        .then(data => {
+            const definition = data && data.length > 0 ? formatDefinition(data[0]) : 'No definition found.';
+            definitionResult.innerHTML = `<div class="card">${definition}</div>`;
+        })
+        .catch(error => {
+            console.error('Error fetching definition:', error);
+            definitionResult.innerHTML = 'Error fetching definition.';
+        });
+}
+
+function formatDefinition(data) {
+    const phonetic = data.phonetics && data.phonetics.length > 0 ? data.phonetics[0].text : '';
+    const meanings = data.meanings && data.meanings.length > 0 ? data.meanings.map(formatMeaning).join('') : '';
+
+    return `
+        <h3>${data.word}</h3>
+        <p>Phonetic: ${phonetic}</p>
+        <div>${meanings}</div>
+    `;
+}
+
+function formatMeaning(meaning) {
+    const partOfSpeech = meaning.partOfSpeech ? `<strong>${meaning.partOfSpeech}:</strong>` : '';
+    const definitions = meaning.definitions && meaning.definitions.length > 0
+        ? meaning.definitions.map(def => `<p>- ${def.definition}</p>`).join('')
+        : '';
+
+    return `<div>${partOfSpeech}${definitions}</div>`;
+}
+
 // Copyright (c) 2023 JOHN RÉ PORAS

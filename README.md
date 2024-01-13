@@ -34,9 +34,10 @@ This is a simple web application that generates random stoic quotes. The applica
 - **script.js:** The JavaScript file handling the generation of random quotes.
 - **gen.png:** The favicon image for the webpage.
 
-### Dependencies
+### Additional Tools
 
-- [Montserrat Font](https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap): Used for the typography.
+- **Dictionary**
+- **Poetry Finder**
 
 ### Contributions
 

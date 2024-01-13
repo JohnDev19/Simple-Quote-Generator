@@ -66,6 +66,7 @@ function getRandomPoem(poems) {
 function renderPoem(poem, container) {
     container.innerHTML = `<div class="card">
         <h3 style="text-align: center;">${poem.title}</h3>
+        <p style="text-align: center;">By: ${poem.author}</p>
         <p style="text-align: center;">${poem.lines.join('<br>')}</p>
     </div>`;
 }

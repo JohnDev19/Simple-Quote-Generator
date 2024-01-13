@@ -85,17 +85,27 @@ function getDefinition() {
     const wordInput = document.getElementById('wordInput');
     const definitionResult = document.getElementById('definitionResult');
 
-    const word = encodeURIComponent(wordInput.value);
+    const word = wordInput.value.trim();
 
-    fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
-        .then(response => response.json())
+    if (!word) {
+        definitionResult.innerHTML = 'Please provide a word.';
+        return;
+    }
+
+    fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word)}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Word not found in the dictionary.');
+            }
+            return response.json();
+        })
         .then(data => {
             const definition = data && data.length > 0 ? formatDefinition(data[0]) : 'No definition found.';
             definitionResult.innerHTML = `<div class="card">${definition}</div>`;
         })
         .catch(error => {
-            console.error('Error fetching definition:', error);
-            definitionResult.innerHTML = 'Error fetching definition.';
+            console.error('Error fetching definition:', error.message);
+            definitionResult.innerHTML = `<div class="card">Error: ${error.message}</div>`;
         });
 }
 

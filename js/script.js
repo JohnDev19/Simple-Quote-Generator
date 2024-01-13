@@ -1,4 +1,4 @@
-// --- Random Quote Generator --- //
+// Quote Generator
 
 function cleanAuthorName(author) {
     return author.replace('@', '').trim();
@@ -29,7 +29,7 @@ function displayQuote() {
 
 window.onload = displayQuote;
 
-// --- Poetry --- //
+// Poetry Finder
 
 function getPoetry() {
     const authorInput = document.getElementById('authorInput');
@@ -66,6 +66,7 @@ function getRandomPoem(poems) {
 function renderPoem(poem, container) {
     container.innerHTML = `<div class="card">
         <h3 style="text-align: center;">${poem.title}</h3>
+        <p style="text-align: center;">By: ${poem.author}</p>
         <p style="text-align: center;">${poem.lines.join('<br>')}</p>
     </div>`;
 }
@@ -77,7 +78,6 @@ function renderNoPoetry(container) {
 function renderError(container) {
     container.innerHTML = '<div class="card"><p style="text-align: center;">Error fetching poetry. Please try again later.</p></div>';
 }
-
 
 // Dictionary
 
@@ -139,52 +139,4 @@ function formatMeaning(meaning) {
     return `<div>${partOfSpeech}${definitions}</div>`;
 }
 
-
-// --- Scrape --- //
-
-function scrape() {
-    const urlInput = document.getElementById('urlInput');
-    const scrapeResult = document.getElementById('scrapeResult');
-
-    const url = encodeURIComponent(urlInput.value);
-    const apiKey = 'dc3fc7bc7dc540a7b1df7827fe205360'; // Replace with your actual API key
-
-    fetch(`https://scrape.abstractapi.com/v1/?api_key=${apiKey}&url=${url}`)
-        .then(response => response.json())
-        .then(data => {
-            const result = data && data.html ? formatScrapeResult(data.html) : 'No data found.';
-            scrapeResult.innerHTML = `<div class="card">${result}</div>`;
-        })
-        .catch(error => {
-            console.error('Error scraping:', error);
-            scrapeResult.innerHTML = 'Error scraping.';
-        });
-}
-
-function formatScrapeResult(html) {
-    // Format and display the scraped HTML content
-    return `
-        <h3>Scraped Content</h3>
-        <p>${html}</p>
-        <button class="btn btn-outline-secondary" onclick="copyToClipboard('${html}')">Copy</button>
-        <div class="notification" id="copyNotification">Copied to clipboard successfully!</div>
-    `;
-}
-
-function copyToClipboard(text) {
-    const tempInput = document.createElement('textarea');
-    tempInput.value = text;
-    document.body.appendChild(tempInput);
-    tempInput.select();
-    document.execCommand('copy');
-    document.body.removeChild(tempInput);
-
-    // Show the copy notification
-    const copyNotification = document.getElementById('copyNotification');
-    copyNotification.style.display = 'block';
-    setTimeout(() => {
-        copyNotification.style.display = 'none';
-    }, 2000); // Hide the notification after 2 seconds
-}
-
-
+// Copyright (c) 2023 JOHN RÉ PORAS

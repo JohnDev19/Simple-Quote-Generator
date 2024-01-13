@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap");
+
+body {
+    background-color: #FFAA00;
+}
+
+.content {
+    max-width: 600px;
+    padding: 20px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    color: #000000;
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.btn {
+    height: 50px;
+    width: 150px;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #FFAA00;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 30px 15px 30px;
+    max-width: 500px;
+    background-color: #FFE2B1;
+    border-radius: 5px;
+    border-top: #ee9be4 5px;
+    margin-top: 20px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+}
+
+.card, p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+
+
+button:focus {
+    outline: none;
+}
+
+
+img {
+    height: 25px;
+    width: 25px;
+}
+
+#poetryResult {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.2em !important;
+    color: #333 !important;
+}
+
+input {
+    width: 100%;
+    padding: 12px !important;
+    margin-bottom: 20px !important;
+    border: 2px solid #ccc !important;
+    border-radius: 8px !important;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+input:hover,
+input:focus {
+    border-color: #FFAA00 !important;
+    box-shadow: 0 0 5px rgba(255, 170, 0, 0.5) !important;
+}
+
+.close {
+    position: absolute !important;
+    top: 10px !important;
+    left: 10px !important;
+    font-size: 1.5em !important;
+    color: #000 !important;
+    cursor: pointer !important;
+    background: transparent !important;
+    border: none !important;
+}
+
+.close:hover {
+    color: #ff0000 !important;
+}
+
+#definitionResult {
+    margin-top: 20px;
+    text-align: left;
+    }

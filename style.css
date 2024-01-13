@@ -96,7 +96,7 @@ input:focus {
 .close {
     position: absolute !important;
     top: 10px !important;
-    right: 10px !important;
+    left: 10px !important;
     font-size: 1.5em !important;
     color: #000 !important;
     cursor: pointer !important;

@@ -38,17 +38,23 @@ function getPoetry() {
     const author = encodeURIComponent(authorInput.value);
 
     fetch(`https://poetrydb.org/author/${author}`)
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
         .then(data => {
-            const poem = data && data.length > 0 ? getRandomPoem(data) : 'No poetry found.';
-            poetryResult.innerHTML = `<div class="card">
-                <h3 style="text-align: center;">${poem.title}</h3>
-                <p style="text-align: center;">${poem.lines.join('<br>')}</p>
-            </div>`;
+            if (data && data.length > 0) {
+                const poem = getRandomPoem(data);
+                renderPoem(poem, poetryResult);
+            } else {
+                renderNoPoetry(poetryResult);
+            }
         })
         .catch(error => {
             console.error('Error fetching poetry:', error);
-            poetryResult.innerHTML = 'Error fetching poetry.';
+            renderError(poetryResult);
         });
 }
 
@@ -57,5 +63,19 @@ function getRandomPoem(poems) {
     return poems[randomIndex];
 }
 
+function renderPoem(poem, container) {
+    container.innerHTML = `<div class="card">
+        <h3 style="text-align: center;">${poem.title}</h3>
+        <p style="text-align: center;">${poem.lines.join('<br>')}</p>
+    </div>`;
+}
+
+function renderNoPoetry(container) {
+    container.innerHTML = '<div class="card"><p style="text-align: center;">No poetry found for the specified author.</p></div>';
+}
+
+function renderError(container) {
+    container.innerHTML = '<div class="card"><p style="text-align: center;">Error fetching poetry. Please try again later.</p></div>';
+}
 
 // Copyright (c) 2023 JOHN RÉ PORAS

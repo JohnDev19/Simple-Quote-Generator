@@ -37,9 +37,6 @@ h2 {
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-
-
-
 .card {
     display: flex;
     flex-direction: column;
@@ -77,23 +74,23 @@ img {
 label {
     display: block;
     margin-bottom: 10px;
-    font-size: 1.2em;
-    color: #333;
+    font-size: 1.2em !important;
+    color: #333 !important;
 }
 
 input {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    padding: 12px !important;
+    margin-bottom: 20px !important;
+    border: 2px solid #ccc !important;
+    border-radius: 8px !important;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
 }
 
 input:hover,
 input:focus {
-    border-color: #FFAA00;
-    box-shadow: 0 0 5px rgba(255, 170, 0, 0.5);
+    border-color: #FFAA00 !important;
+    box-shadow: 0 0 5px rgba(255, 170, 0, 0.5) !important;
 }
 
 .close {

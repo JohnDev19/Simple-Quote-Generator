@@ -69,3 +69,23 @@ img {
     height: 25px;
     width: 25px;
 }
+
+#poetryResult {
+    margin-top: 20px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5em;
+    color: #000;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+}
+
+.close:hover {
+    color: #ff0000;
+}
+

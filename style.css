@@ -77,19 +77,23 @@ img {
 label {
     display: block;
     margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #333;
 }
 
 input {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 40px;
+    padding: 12px;
+    margin-bottom: 20px;
     border: 2px solid #ccc;
-    border-radius: 5px;
-    transition: border-color 0.3s ease;
+    border-radius: 8px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-input:hover {
+input:hover,
+input:focus {
     border-color: #FFAA00;
+    box-shadow: 0 0 5px rgba(255, 170, 0, 0.5);
 }
 
 .close {

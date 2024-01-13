@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="gen.png">
     <title>Stoic Quote</title>
+    <link rel="stylesheet" href="css/aos.css">
+    <script>AOS.init();</script>
 </head>
 <body>
-    <div class="content">
+    <div class="content" data-aos="fade-down">
         <div class="card">
           <h2>Random quote</h2>
           <p>Do you want a random quote?</p>
@@ -16,23 +18,26 @@
         </div>
         <div id="quote"></div>
     </div>
-    
+    <div class="card" data-aos="fade-down">
       <div class="content">
           <h2>Other Tools</h2>
-        <div class="card">
+        <div class="card1" data-aos="fade-down">
           <p>Poetry Finder</p>
-          <button onclick="window.location.href='poetry.html'" class="btn">Visit</button>
+          <button onclick="window.location.href='poetry.html'" class="btn1">Visit</button>
         </div>
         </div>
-
-    <div class="content">
-        <div class="card">
+        
+        <div class="content">
+        <div class="card1" data-aos="fade-down">
           <p>Dictionary</p>
-          <button onclick="window.location.href='dictionary.html'" class="btn">Visit</button>
+          <button onclick="window.location.href='dictionary.html'" class="btn1">Visit</button>
+        </div>
         </div>
         </div>
 </body>
-<script src="script.js"></script>
-</html>
-
-<!--- Copyright (c) 2023 JOHN RÉ PORAS --->
+<script src="js/script.js"></script>
+<script src="js/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+                                                                                     </html>

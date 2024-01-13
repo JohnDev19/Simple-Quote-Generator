@@ -110,14 +110,24 @@ function getDefinition() {
 }
 
 function formatDefinition(data) {
-    const phonetic = data.phonetics && data.phonetics.length > 0 ? data.phonetics[0].text : '';
+    const word = data.word || 'No word provided';
+    const phonetic = data.phonetics && data.phonetics.length > 0 ? data.phonetics[0].text : 'No Phonetic';
+    const phoneticAudio = data.phonetics && data.phonetics.length > 0 ? data.phonetics[0].audio : '';
     const meanings = data.meanings && data.meanings.length > 0 ? data.meanings.map(formatMeaning).join('') : '';
 
     return `
-        <h3>${data.word}</h3>
-        <p>Phonetic: ${phonetic}</p>
+        <h3>${word}</h3>
+        <p style="text-align: center;">Phonetic: ${phonetic} ${createAudioElement(phoneticAudio)}</p>
         <div>${meanings}</div>
     `;
+}
+
+function createAudioElement(audioUrl) {
+    if (audioUrl) {
+        return `<audio controls><source src="${audioUrl}" type="audio/mpeg"></audio>`;
+    } else {
+        return '';
+    }
 }
 
 function formatMeaning(meaning) {

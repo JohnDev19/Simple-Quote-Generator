@@ -107,3 +107,8 @@ input:focus {
 .close:hover {
     color: #ff0000 !important;
 }
+
+#definitionResult {
+    margin-top: 20px;
+    text-align: left;
+    }

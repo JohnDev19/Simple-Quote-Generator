@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap");
 
 body {
-    background-color: #FFAA00;
+    background-color: #E0E5EC;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .content {
@@ -17,76 +18,61 @@ h2 {
     padding: 10px;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
-    border-radius: 5px;
 }
 
-.btn {
-    height: 50px;
-    width: 150px;
-    font-size: 18px;
-    color: #ffffff;
-    background-color: #FFAA00;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
-    border: none;
-    border-radius: 5px;
-    outline: none;
-    transition: box-shadow 0.3s ease;
-}
-
-.btn:hover {
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-}
-
+.btn,
 .btn1 {
     height: 50px;
     width: 150px;
     font-size: 18px;
-    color: #000000;
-    background-color: #FFE2B1;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    border: none;
     border-radius: 5px;
     outline: none;
     transition: box-shadow 0.3s ease;
+}
+
+.btn:hover,
+.btn1:hover {
+    box-shadow: 5px 5px 10px #BFC7D1, -5px -5px 10px #FFFFFF;
+}
+
+.btn:active,
+.btn1:active {
+    box-shadow: inset 3px 3px 6px #BFC7D1, inset -3px -3px 6px #FFFFFF; /* Neumorphic active effect */
+}
+
+.btn {
+    color: #000000;
+    background-color: #E0E5EC;
+    box-shadow: 5px 5px 10px #BFC7D1, -5px -5px 10px #FFFFFF;
+    border: none;
+}
+
+.btn1 {
+    color: #000000;
+    background-color: #E0E5EC;
+    box-shadow: 5px 5px 10px #BFC7D1, -5px -5px 10px #FFFFFF;
+    border: none;
     position: relative;
 }
 
-.btn1:hover {
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-.card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px 30px 15px 30px;
-    max-width: 500px;
-    background-color: #FFE2B1;
-    border-radius: 5px;
-    border-top: #ee9be4 5px;
-    margin-top: 20px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s ease;
-}
-
-.card, p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
-}
-
+.card,
 .card1 {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 15px 30px 15px 30px;
     max-width: 500px;
-    background-color: #FFAA00;
     border-radius: 5px;
-    border-top: #ee9be4 5px;
     margin-top: 20px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     transition: box-shadow 0.3s ease;
     margin: auto;
+    background-color: #E0E5EC;
+    box-shadow: 5px 5px 10px #BFC7D1, -5px -5px 10px #FFFFFF;
+}
+
+.card1 {
+    flex-direction: row;
+    background-color: #FFAA00;
 }
 
 @media (min-width: 768px) {
@@ -95,23 +81,23 @@ h2 {
     }
 }
 
-.card1, p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
-    text-align: center;
-}
 button:focus {
     outline: none;
 }
-
 
 img {
     height: 25px;
     width: 25px;
 }
 
-#poetryResult {
+#poetryResult,
+#definitionResult {
     margin-top: 20px;
+    text-align: left;
+    background-color: #E0E5EC;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px #BFC7D1, -5px -5px 10px #FFFFFF;
 }
 
 label {
@@ -128,6 +114,8 @@ input {
     border: 2px solid #ccc !important;
     border-radius: 8px !important;
     transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
+    background-color: #E0E5EC;
+    box-shadow: 5px 5px 10px #BFC7D1, -5px -5px 10px #FFFFFF;
 }
 
 input:hover,
@@ -145,13 +133,11 @@ input:focus {
     cursor: pointer !important;
     background: transparent !important;
     border: none !important;
+    background-color: #E0E5EC;
+    box-shadow: 5px 5px 10px #BFC7D1, -5px -5px 10px #FFFFFF;
 }
 
 .close:hover {
-    color: #ff0000 !important;
+    border-color: #FFAA00 !important;
+    box-shadow: 0 0 5px rgba(255, 170, 0, 0.5) !important;
 }
-
-#definitionResult {
-    margin-top: 20px;
-    text-align: left;
-    }

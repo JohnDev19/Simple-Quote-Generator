@@ -18,6 +18,13 @@ h2 {
     padding: 10px;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
+    
+}
+
+p {
+    color: #000000;
+    padding: 10px;
+    text-align: center;
 }
 
 .btn,
@@ -37,7 +44,7 @@ h2 {
 
 .btn:active,
 .btn1:active {
-    box-shadow: inset 3px 3px 6px #BFC7D1, inset -3px -3px 6px #FFFFFF; /* Neumorphic active effect */
+    box-shadow: inset 3px 3px 6px #BFC7D1, inset -3px -3px 6px #FFFFFF;
 }
 
 .btn {
@@ -120,7 +127,7 @@ input {
 
 input:hover,
 input:focus {
-    border-color: #FFAA00 !important;
+    border-color: #3D3D3D !important;
     box-shadow: 0 0 5px rgba(255, 170, 0, 0.5) !important;
 }
 
@@ -138,6 +145,23 @@ input:focus {
 }
 
 .close:hover {
-    border-color: #FFAA00 !important;
     box-shadow: 0 0 5px rgba(255, 170, 0, 0.5) !important;
+}
+
+audio {
+    width: 70%;
+    max-width: 500px;
+    margin: 20px auto;
+    background-color: #E0E5EC;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 5px 5px 10px #BFC7D1, -5px -5px 10px #FFFFFF;
+}
+
+audio:hover {
+    box-shadow: 8px 8px 16px #BFC7D1, -8px -8px 16px #FFFFFF;
+}
+
+source {
+    outline: none;
 }
